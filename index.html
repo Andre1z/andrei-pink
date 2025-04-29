@@ -8,8 +8,23 @@
 </head>
 <body>
     <h1>Demostración de andrei-pink</h1>
-    <p title="Esto es un párrafo destacado">Párrafo con atributo title.</p>
-    <button onclick="activarModoAyuda()">Activar modo de ayuda</button>
+    
+    <!-- Descripción breve -->
+    <p>Explora las funcionalidades del modo de ayuda interactivo.</p>
+    
+    <!-- Párrafos con tooltips -->
+    <p title="Esto es un párrafo destacado" data-keyword="importante">Párrafo con atributo title y palabra clave "importante".</p>
+    <p subtitle="Texto alternativo aquí" data-keyword="texto">Otro párrafo con title y palabra clave "texto".</p>
+    
+    <!-- Botones para funcionalidades -->
+    <div class="button-container">
+        <button onclick="activarModoAyuda()">Activar/desactivar modo de ayuda</button>
+        <button onclick="contarElementosResaltados()">Contar elementos resaltados</button>
+        <button onclick="activarTooltipsInteractivos()">Activar tooltips interactivos</button>
+        <button onclick="resaltarPorPalabraClave('importante')">Resaltar por palabra clave: 'importante'</button>
+        <button onclick="activarModoAyudaConTemporizador(10000)">Activar modo de ayuda por 10 segundos</button>
+        <button onclick="activarAnimacionesDeAyuda()">Activar animaciones dinámicas</button>
+    </div>
     <script src="andrei-pink.js"></script>
 </body>
 </html>

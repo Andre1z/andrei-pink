@@ -3,11 +3,11 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #ffe4e1; /* Fondo rosa claro */
     margin: 0;
-    padding: 0;
+    padding: 20px;
     box-sizing: border-box;
 }
 
-/* Estilo para el encabezado */
+/* Encabezado principal */
 h1 {
     font-family: 'Arial', sans-serif;
     color: #ff69b4; /* Color rosa fuerte */
@@ -15,7 +15,7 @@ h1 {
     margin-top: 20px;
 }
 
-/* Estilo para párrafos destacados */
+/* Descripción breve */
 p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -28,10 +28,10 @@ p {
     margin: 20px auto;
 }
 
-/* Estilo del botón */
+/* Estilo para los botones en fila */
 button {
-    display: block;
-    margin: 20px auto;
+    display: inline-block; /* Cambia de bloque a en línea */
+    margin: 10px; /* Espaciado entre botones */
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
@@ -46,26 +46,60 @@ button:hover {
     background-color: #ff85c1; /* Cambia a un tono más claro al pasar el cursor */
 }
 
-/* Desactivar el tooltip por defecto */
-[title]::after {
-    content: none; /* Por defecto, los tooltips están desactivados */
+/* Contenedor para los botones */
+button-container {
+    text-align: center; /* Centra el contenedor horizontalmente */
+    width: 100%; /* Ocupa todo el ancho */
 }
 
-/* Tooltip visible solo cuando se activa el modo de ayuda */
-.mostrar-tooltip::after {
+/* Tooltips por defecto (ocultos) */
+[title]::after {
+    content: none;
+}
+
+/* Tooltip para el atributo 'title' */
+[title]::after {
     content: attr(title);
     position: absolute;
     background: pink;
     color: black;
     padding: 5px;
     border-radius: 4px;
-    top: 100%; /* Justo debajo del elemento */
-    left: 0;
+    top: 100%; /* Coloca el tooltip debajo del párrafo */
+    left: 0; /* Centra horizontalmente respecto al elemento */
     white-space: nowrap;
     z-index: 10;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Resaltado de elementos con modo de ayuda activado */
+/* Tooltip para el atributo 'subtitle' */
+[subtitle]::after {
+    content: attr(subtitle);
+    position: absolute;
+    background: lightblue;
+    color: black;
+    padding: 5px;
+    border-radius: 4px;
+    top: 100%; /* Misma altura que el title */
+    left: 25%; /* A la derecha del title */
+    white-space: nowrap;
+    z-index: 10;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Resaltado dinámico con animación */
 .mostrar-tooltip {
-    outline: 2px solid pink; /* Resaltado de borde */
+    outline: 2px solid pink; /* Borde rosa de resaltado */
+    transition: all 0.5s ease-in-out; /* Efecto animado */
+}
+
+/* Párrafos resaltados por palabras clave */
+[data-keyword="importante"] {
+    background-color: #ffe4e1; /* Fondo rosado claro */
+    border: 2px dashed #ff69b4; /* Bordes punteados */
+}
+
+[data-keyword="texto"] {
+    background-color: #f0f8ff; /* Fondo azul claro */
+    border: 2px dashed #6495ed; /* Bordes punteados azules */
 }
