@@ -1,0 +1,71 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffe4e1; /* Fondo rosa claro */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    font-family: 'Arial', sans-serif;
+    color: #ff69b4; /* Color rosa fuerte */
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Estilo para párrafos destacados */
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    padding: 10px;
+    border: 1px solid #ff69b4;
+    border-radius: 8px;
+    background-color: #fff0f5; /* Fondo rosado suave */
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Estilo del botón */
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff69b4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff85c1; /* Cambia a un tono más claro al pasar el cursor */
+}
+
+/* Desactivar el tooltip por defecto */
+[title]::after {
+    content: none; /* Por defecto, los tooltips están desactivados */
+}
+
+/* Tooltip visible solo cuando se activa el modo de ayuda */
+.mostrar-tooltip::after {
+    content: attr(title);
+    position: absolute;
+    background: pink;
+    color: black;
+    padding: 5px;
+    border-radius: 4px;
+    top: 100%; /* Justo debajo del elemento */
+    left: 0;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* Resaltado de elementos con modo de ayuda activado */
+.mostrar-tooltip {
+    outline: 2px solid pink; /* Resaltado de borde */
+}
